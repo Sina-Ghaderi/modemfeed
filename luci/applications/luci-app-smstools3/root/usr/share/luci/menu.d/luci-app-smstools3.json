@@ -9,7 +9,7 @@
 	},
 
 	"admin/modem/sms": {
-		"title": "Smstools3 SMS",
+		"title": "SMS Messages",
 		"order": 21,
 		"action": {
 			"type": "alias",
