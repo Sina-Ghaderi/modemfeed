@@ -27,15 +27,6 @@ return view.extend({
 
 		s = m.section(form.TypedSection, '3ginfo', '', null);
 		s.anonymous = true;
-
-/*		Old config
-		o = s.option(widgets.DeviceSelect, 'network', _('Interface'),
-		_('Network interface for Internet access.')
-		);
-		o.noaliases  = false;
-		o.default = 'wan';
-		o.rmempty = false;
-*/
 		
 		o = s.option(widgets.NetworkSelect, 'network', _('Interface'),
 		_('Network interface for Internet access.')
@@ -60,23 +51,6 @@ return view.extend({
 		s = m.section(form.TypedSection, '3ginfo', null);
 		s.anonymous = true;
 		s.addremove = false;
-
-		s.tab('bts1', _('BTS search settings'));
-		s.anonymous = true;
-
-		o = s.taboption('bts1', form.DummyValue, '_dummy');
-			o.rawhtml = true;
-			o.default = '<div class="cbi-section-descr">' +
-				_('Hint: To set up a BTS search engine, all you have to do is select the dedicated website for your location.') +
-				'</div>';
-
-		o = s.taboption('bts1',form.ListValue, 'website', _('Website to search for BTS'),
-		_('Select a website for searching.')
-		);
-		o.value('http://www.btsearch.pl/szukaj.php?mode=std&search=', _('btsearch.pl'));
-		o.value('https://lteitaly.it/internal/map.php#bts=', _('lteitaly.it'));
-		o.default = 'http://www.btsearch.pl/szukaj.php?mode=std&search=';
-		o.modalonly = true;
 
 		return m.render();
 	}
