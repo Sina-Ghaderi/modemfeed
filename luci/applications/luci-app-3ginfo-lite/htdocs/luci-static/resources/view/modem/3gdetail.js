@@ -533,7 +533,7 @@ simDialog: baseclass.extend({
 					if (json.signal == '0' || json.signal == '') {
 						fs.exec('sleep 3');
 							if (json.signal == '0' || json.signal == '' || json.signal == '-') {
-							L.ui.showModal(_('3ginfo-lite'), [
+							L.ui.showModal(_('Cellular Info'), [
 							E('p', { 'class': 'spinning' }, _('Waiting to read data from the modem...'))
 							]);
 
@@ -932,8 +932,8 @@ simDialog: baseclass.extend({
 				}
 		}		
 
-		var info = _('More information about the 3ginfo on the %seko.one.pl forum%s.').format('<a href="https://eko.one.pl/?p=openwrt-3ginfo" target="_blank">', '</a>');
-		m = new form.JSONMap(this.formdata, _('3ginfo-lite'), info);
+		var info = 'Information about cellular modem installed on this device'
+		m = new form.JSONMap(this.formdata, _('Cellular Info'), info);
 
 		s = m.section(form.TypedSection, '3ginfo', '', null);
 		s.anonymous = true;

@@ -138,11 +138,10 @@ return view.extend({
 			]);
 
 
-		var info = _('More information about the 3ginfo on the %seko.one.pl forum%s.').format('<a href="https://eko.one.pl/?p=openwrt-3ginfo" target="_blank">', '</a>');
 
 		var view = E('div', { 'class': 'cbi-map'}, [
 			E('h2', {}, [ _('Diagnostics') ]),
-			E('div', { 'class': 'cbi-map-descr'}, _('Execution of various commands to check the availability of the modem and eliminate errors in the data collected by the scripts.') + '<br />' + info),
+			E('div', { 'class': 'cbi-map-descr'}, _('Execution of various commands to check the availability of the modem and eliminate errors in the data collected by the scripts.') + '<br />'),
 			table,
 			E('hr'),
 			E('div', {'class': 'cbi-section'}, [
