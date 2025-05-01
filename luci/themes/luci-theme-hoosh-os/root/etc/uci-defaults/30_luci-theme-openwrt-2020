@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$PKG_UPGRADE" != 1 ]; then
+	uci get luci.themes.hoosh-os >/dev/null 2>&1 || \
+	uci batch <<-EOF
+		set luci.themes.hoosh-os=/luci-static/hoosh-os
+		set luci.main.mediaurlbase=/luci-static/hoosh-os
+		commit luci
+	EOF
+fi
+
+exit 0
