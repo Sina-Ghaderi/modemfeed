@@ -7,7 +7,7 @@
 </div>
 
 <p class="luci">
-	Powered by {{ version.luciname }} ({{ version.luciversion }})
+	Powered by Hoosh-OS
 </p>
 
 <script>L.require('menu-hoosh-os')</script>

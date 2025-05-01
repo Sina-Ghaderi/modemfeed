@@ -12,7 +12,7 @@
 
 @font-face {
  	font-family: "GalanoGrotesqueW00-Regular";
- 	src: url("GalanoGrotesqueW00-Regular.woff2") format("woff2");
+ 	src: url("Cantarell-Regular.woff2") format("woff2");
 }
 
 :root[lang="bg"], :root[lang="ru"], :root[lang="uk"], :root[lang="el"], :root[lang="he"] {
