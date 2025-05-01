@@ -4,7 +4,7 @@ config sms_tool 'general'
 	option prefix '1'
 	option ledtimeon '1'
 	option ledtimeoff '5'
-	option lednotify '0'
+	option lednotify '1'
 	option checktime '10'
 	option mergesms '1'
 	option information '1'
@@ -18,5 +18,8 @@ config sms_tool 'general'
 	option sendport '/dev/ttyUSB1'
 	option atport '/dev/ttyUSB1'
 	option algorithm 'Simple'
+	option smsled 'green:sms'
+
+
 
 
