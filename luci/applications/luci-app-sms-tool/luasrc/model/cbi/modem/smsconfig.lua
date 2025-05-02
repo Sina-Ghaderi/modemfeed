@@ -99,16 +99,6 @@ f.rmempty = false
 local i = s:taboption(this_tab, Flag, "information", translate("Explanation of number and prefix"), translate("In the tab for sending SMSes, show an explanation of the prefix and the correct phone number."))
 i.rmempty = false
 
-function ta.cfgvalue(self, section)
-    return fs.readfile(PHB_FILE_PATH)
-end
-
-function ta.write(self, section, value)
-    		value = value:gsub("\r\n", "\n")
-    		fs.writefile(PHB_FILE_PATH, value)
-end
-
-
 this_tabb = "info"
 
 local uw = s:taboption(this_tabb, Flag, "lednotify", translate("Notify new messages"), translate("The LED informs about a new message. Before activating this function, please config and save the SMS reading port, time to check SMS inbox and select the notification LED."))
