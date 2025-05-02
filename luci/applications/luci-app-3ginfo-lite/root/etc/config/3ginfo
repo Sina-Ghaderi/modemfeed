@@ -1,4 +1,3 @@
 
 config 3ginfo
-	option website 'http://www.btsearch.pl/szukaj.php?mode=std&search='
 	option device '/dev/ttyUSB1'
