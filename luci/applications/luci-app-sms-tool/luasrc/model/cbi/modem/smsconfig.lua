@@ -101,10 +101,6 @@ f.rmempty = false
 local i = s:taboption(this_tab, Flag, "information", translate("Explanation of number and prefix"), translate("In the tab for sending SMSes, show an explanation of the prefix and the correct phone number."))
 i.rmempty = false
 
-local ta = s:taboption(this_tab, TextValue, "user_phonebook", translate("User Phonebook"), translate("Each line must have the following format: 'Contact name;Phone number'. Save to file '/etc/config/phonebook.user'."))
-ta.rows = 7
-ta.rmempty = false
-
 function ta.cfgvalue(self, section)
     return fs.readfile(PHB_FILE_PATH)
 end
@@ -114,57 +110,6 @@ function ta.write(self, section, value)
     		fs.writefile(PHB_FILE_PATH, value)
 end
 
-this_taba = "ussd"
-
-dev3 = s:taboption(this_taba, Value, "ussdport", translate("USSD Sending Port"))
-if try_devices3 then
-local node
-for node in try_devices3 do
-dev3:value(node, node)
-end
-end
-
-local u = s:taboption(this_taba, Flag, "ussd", translate("Sending USSD Code in plain text"), translate("Send the USSD code in plain text. Command is not being coded to the PDU."))
-u.rmempty = false
-
-local p = s:taboption(this_taba, Flag, "pdu", translate("Receive message without PDU decoding"), translate("Receive and display the message without decoding it as a PDU."))
-p.rmempty = false
-
-local tb = s:taboption(this_taba, TextValue, "user_ussd", translate("User USSD Codes"), translate("Each line must have the following format: 'Code name;Code'. Save to file '/etc/config/ussd.user'."))
-tb.rows = 7
-tb.rmempty = true
-
-function tb.cfgvalue(self, section)
-    return fs.readfile(USSD_FILE_PATH)
-end
-
-function tb.write(self, section, value)
-    		value = value:gsub("\r\n", "\n")
-    		fs.writefile(USSD_FILE_PATH, value)
-end
-
-this_tabc = "at"
-
-dev4 = s:taboption(this_tabc, Value, "atport", translate("AT Commands Sending Port"))
-if try_devices4 then
-local node
-for node in try_devices4 do
-dev4:value(node, node)
-end
-end
-
-local tat = s:taboption(this_tabc, TextValue, "user_at", translate("User AT Commands"), translate("Each line must have the following format: 'AT Command name;AT Command'. Save to file '/etc/config/atcmds.user'."))
-tat.rows = 20
-tat.rmempty = true
-
-function tat.cfgvalue(self, section)
-    return fs.readfile(AT_FILE_PATH)
-end
-
-function tat.write(self, section, value)
-    		value = value:gsub("\r\n", "\n")
-    		fs.writefile(AT_FILE_PATH, value)
-end
 
 this_tabb = "info"
 
