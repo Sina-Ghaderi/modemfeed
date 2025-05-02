@@ -45,8 +45,6 @@ m = Map("sms_tool", translate("Configuration sms-tool"),
 s = m:section(NamedSection, 'general' , "sms_tool" , "" .. translate(""))
 s.anonymous = true
 s:tab("sms", translate("SMS Settings"))
-s:tab("ussd", translate("USSD Codes Settings"))
-s:tab("at", translate("AT Commands Settings"))
 s:tab("info", translate("Notification Settings"))
 
 this_tab = "sms"

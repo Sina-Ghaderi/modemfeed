@@ -29,15 +29,6 @@
 			"path": "modem/3gdetail"
 		}
 	},
-	
-	"admin/modem/3ginfo-lite/3gdebug": {
-		"title": "Diagnostics",
-		"order": 20,
-		"action": {
-			"type": "view",
-			"path": "modem/3gdebug"
-		}
-	},
 
 	"admin/modem/3ginfo-lite/3gconfig": {
 		"title": "Configuration",
