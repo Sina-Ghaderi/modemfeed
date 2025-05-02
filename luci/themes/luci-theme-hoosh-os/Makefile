@@ -12,18 +12,10 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=Bootstrap hoosh-os Theme
+LUCI_TITLE:=Bootstrap hooshOS Theme
 LUCI_DEPENDS:=+luci-base
 
 PKG_LICENSE:=Apache-2.0
-
-define Package/luci-theme-hoosh-os/postrm
-#!/bin/sh
-[ -n "$${IPKG_INSTROOT}" ] || {
-	uci -q delete luci.themes.hoosh-os
-	uci commit luci
-}
-endef
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
